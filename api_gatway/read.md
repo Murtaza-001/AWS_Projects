@@ -13,8 +13,8 @@ IAM will ensure Lambda has permissions to access DynamoDB.
 
 
 Step 1: Create a DynamoDB Table
-Go to the DynamoDB service in the AWS Management Console.
-Click Create table.
-Set the Table name (e.g., Items) and define a Primary Key (e.g., id as a String).
-Leave the other settings as default, or modify them as needed.
-Click Create to create the table.
+1. Go to the DynamoDB service in the AWS Management Console.
+2. Click Create table.
+3. Set the Table name (e.g., Items) and define a Primary Key (e.g., id as a String).
+4. Leave the other settings as default, or modify them as needed.
+5. Click Create to create the table.
