@@ -35,11 +35,12 @@ Steps:
 5. Set Runtime to Node.js or Python (depending on your preference for writing Lambda functions).
    Click Create function.
 
-   ``` const AWS = require('aws-sdk');
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
+   ```
+   const AWS = require('aws-sdk');
+   const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
-exports.handler = async (event) => {
-    const { httpMethod, path, body } = event;
+   exports.handler = async (event) => {
+   const { httpMethod, path, body } = event;
 
     if (httpMethod === 'POST' && path === '/createItem') {
         const item = JSON.parse(body);
@@ -66,5 +67,6 @@ exports.handler = async (event) => {
         statusCode: 400,
         body: JSON.stringify({ message: 'Invalid request' }),
     };
-};
- ``` 
+   };
+
+``` 
