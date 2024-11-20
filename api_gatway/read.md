@@ -89,3 +89,60 @@ Create a Resource and Method:
 5. In the Integration type, select Lambda Function and check Use Lambda Proxy integration.
 6. In the Lambda Function field, type the name of your Lambda function (CreateItemFunction), and click Save. You’ll be prompted to give API Gateway permission to 
    invoke your Lambda function, click OK.
+
+
+
+
+4. Create a DynamoDB Table
+Now let’s create a DynamoDB table to store the data.
+
+Steps:
+Go to the DynamoDB Console.
+Click Create table.
+Set the Table name (e.g., YourDynamoDBTable) and choose a Primary key (e.g., id with type String).
+Click Create.
+Once the table is created, it’s ready to be used by your Lambda function.
+
+5. Create IAM Roles for Lambda
+Lambda requires permission to access DynamoDB. You can modify the IAM role associated with the Lambda function to grant DynamoDB access.
+
+Steps:
+Go to the IAM Console.
+In the left panel, click Roles.
+Find the role that AWS Lambda created for your function (it will have the name lambda-role or similar).
+Click the role name to view its permissions.
+Click Attach policies and search for AmazonDynamoDBFullAccess or create a custom policy with specific permissions for the DynamoDB table.
+Click Attach policy.
+6. Link API Gateway with Amplify Frontend
+Finally, you’ll need to connect your API Gateway to your frontend in Amplify.
+
+In your frontend code, use the AWS Amplify library to make requests to the API Gateway. You can install the AWS Amplify SDK using npm in your project if it's not already installed.
+
+For example, add the following code to your frontend:
+
+javascript
+Copy code
+import { API } from 'aws-amplify';
+
+// Create a new item using POST
+async function createItem(item) {
+    try {
+        const response = await API.post('CreateItemAPI', '/createItem', { body: item });
+        console.log('Item created:', response);
+    } catch (error) {
+        console.error('Error creating item:', error);
+    }
+}
+Make sure to configure Amplify in your frontend code with the API URL and necessary authentication settings (if required).
+7. Deploy Frontend in Amplify Console
+If you have a frontend ready, you can deploy it using AWS Amplify:
+
+Go to the AWS Amplify Console.
+Click Get Started under "Host web app."
+Connect your GitHub repository or upload your static files.
+Configure the build and deployment settings as needed.
+Click Save and Deploy to publish your web application.
+Once deployed, the frontend will be accessible via a public URL.
+
+Conclusion
+By following these steps, you’ve successfully set up a serverless web application using AWS Amplify, Lambda, API Gateway, DynamoDB, and IAM roles. The application now consists of a web frontend deployed in Amplify, a Lambda function connected to DynamoDB via an API Gateway, and IAM roles that grant necessary permissions.
