@@ -69,4 +69,23 @@ Steps:
     };
    };
 
-``` 
+
+
+3. Create an API Gateway
+Next, create an API Gateway to expose the Lambda function as a RESTful API.
+
+Steps:
+1. Go to the Amazon API Gateway Console.
+2. Click Create API.
+3. Select REST API and click Build.
+4. In the API creation screen, choose New API, and provide an API name (e.g., CreateItemAPI).
+5. Click Create API.
+
+Create a Resource and Method:
+1. Under Resources, click Actions and select Create Resource.
+2. Name the resource /createItem and click Create Resource.
+3. With the /createItem resource selected, click Actions and select Create Method.
+4. Choose POST and click the checkmark.
+5. In the Integration type, select Lambda Function and check Use Lambda Proxy integration.
+6. In the Lambda Function field, type the name of your Lambda function (CreateItemFunction), and click Save. You’ll be prompted to give API Gateway permission to 
+   invoke your Lambda function, click OK.
