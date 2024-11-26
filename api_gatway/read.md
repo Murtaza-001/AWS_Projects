@@ -103,17 +103,18 @@ Set the Table name (e.g., YourDynamoDBTable) and choose a Primary key (e.g., id 
 Click Create.
 Once the table is created, it’s ready to be used by your Lambda function.
 
-5. Create IAM Roles for Lambda
+5 -> Create IAM Roles for Lambda
 Lambda requires permission to access DynamoDB. You can modify the IAM role associated with the Lambda function to grant DynamoDB access.
 
 Steps:
-Go to the IAM Console.
-In the left panel, click Roles.
-Find the role that AWS Lambda created for your function (it will have the name lambda-role or similar).
-Click the role name to view its permissions.
-Click Attach policies and search for AmazonDynamoDBFullAccess or create a custom policy with specific permissions for the DynamoDB table.
-Click Attach policy.
-6. Link API Gateway with Amplify Frontend
+1. Go to the IAM Console.
+2. In the left panel, click Roles.
+3. Find the role that AWS Lambda created for your function (it will have the name lambda-role or similar).
+4. Click the role name to view its permissions.
+5. Click Attach policies and search for AmazonDynamoDBFullAccess or create a custom policy with specific permissions for the DynamoDB table.
+6. Click Attach policy.
+
+6 -> Link API Gateway with Amplify Frontend
 Finally, you’ll need to connect your API Gateway to your frontend in Amplify.
 
 In your frontend code, use the AWS Amplify library to make requests to the API Gateway. You can install the AWS Amplify SDK using npm in your project if it's not already installed.
