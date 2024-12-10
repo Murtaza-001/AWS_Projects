@@ -110,7 +110,7 @@ API Gateway will allow external HTTP requests to trigger the Lambda function.
 - Select Lamda fuction and below choose the lamdafunction that we created. (it show as arn: at first followed by your lamdafunc name) be sure the name is correct that you created in lamda
 - In the API dashboard select the Enable CORS -> click on post option -> then click save (it Enable the intraction with different domains like other services)
 - Click on Deploy API -> select new stage -> write a name of stage (any name) we go with dev.
-- copy the Inovke URL -> something like this https://65cm6nx******* paste that url somewhere to retrive it later for the other services
+- copy the Inovke URL -> something like this -https://65cm6nx******* paste that url somewhere to retrive it later for the other services
 - After that in in resourse -> click post -> click test, to test the its working in json formate write
    {
       'base':2,
