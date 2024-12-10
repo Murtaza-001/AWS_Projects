@@ -29,3 +29,17 @@ This app showcases my ability to design and deploy applications in the cloud, le
 - A way to do math
 - Somewhere to store/return the math results
 - A way to handle permissions
+
+Step 1: Set up AWS Amplify for Frontend
+AWS Amplify will help with the frontend setup, including hosting and authentication (if required).
+
+## Create an Amplify Project:
+
+- Open the AWS Amplify Console and click "Create App".
+- Choose "Host Web" as the platform.
+- Connect your repository (GitHub, GitLab, Bitbucket, or manually).
+- so we are going with manually
+- so choose without git provider.
+- Name the app
+- click on choose a file an upload the html file from your Local system (provided the code below copy from it)
+- Note that it should be Zip file (make sure tha file below i provided make it into zip first) and then upload the file
