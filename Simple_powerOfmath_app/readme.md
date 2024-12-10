@@ -44,7 +44,7 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - click on choose a file an upload the html file from your Local system (provided the code below copy from it)
 - Note that it should be Zip file (make sure tha file below i provided make it into zip first) and then upload the file
 
-`<!DOCTYPE html>
+```<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -121,4 +121,4 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
         <button type="button" onclick="callAPI(document.getElementById('base').value,document.getElementById('exponent').value)">CALCULATE</button>
     </form>
 </body>
-</html>`
+</html>```
