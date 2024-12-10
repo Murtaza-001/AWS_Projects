@@ -45,7 +45,7 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - Note that it should be Zip file and Name the file index.html (make sure tha file below i provided make it into zip first) and then upload the file
 
 ```
-<html> <!-- 1 -->
+<html><!-- 1 -->
 <head> <!-- 2 -->
     <meta charset="UTF-8"> <!-- 3 -->
     <title>To the Power of Math!</title> <!-- 4 -->
