@@ -30,7 +30,7 @@ This app showcases my ability to design and deploy applications in the cloud, le
 - Somewhere to store/return the math results
 - A way to handle permissions
 
-Step 1: Set up AWS Amplify for Frontend
+##1. Set up AWS Amplify for Frontend##
 AWS Amplify will help with the frontend setup, including hosting and authentication (if required).
 
 ## Create an Amplify Project:
@@ -44,3 +44,53 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - click on choose a file an upload the html file from your Local system (provided the code below copy from it)
 - Note that it should be Zip file and Name the file index.html (make sure tha file below i provided make it into zip first) and then upload the file
 
+##2. Set Up the AWS Lambda Function##
+Lambda will handle the logic for adding user data into DynamoDB.
+
+Steps:
+- Create a new Lambda function in the AWS console.
+- Go to AWS Lambda -> Create Function -> Author from Scratch.
+- Define the function name, e.g., simpleLamdafunc (use whatever you want) we use PowerofMath.
+- Choose a runtime (e.g., Node.js, Python, etc.). For this example, let's we use python (use the latest version).
+- clikc on Create Function
+- copy the code below
+```
+# import the JSON utility package
+import json
+# import the Python math library
+import math
+
+# import the AWS SDK (for Python the package name is boto3)
+import boto3
+# import two packages to help us with dates and date formatting
+from time import gmtime, strftime
+
+# create a DynamoDB object using the AWS SDK
+dynamodb = boto3.resource('dynamodb')
+# use the DynamoDB object to select our table
+table = dynamodb.Table('PowerOfMathDatabase')
+# store the current time in a human readable format in a variable
+now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+
+# define the handler function that the Lambda service will use an entry point
+def lambda_handler(event, context):
+
+# extract the two numbers from the Lambda service's event object
+    mathResult = math.pow(int(event['base']), int(event['exponent']))
+
+# write result and time to the DynamoDB table using the object we instantiated and save response in a variable
+    response = table.put_item(
+        Item={
+            'ID': str(mathResult),
+            'LatestGreetingTime':now
+            })
+
+# return a properly formatted JSON object
+    return {
+    'statusCode': 200,
+    'body': json.dumps('Your result is ' + str(mathResult))
+    }
+```
+
+- For the role, you can create a new role with basic Lambda permissions, or use an existing role.
+  
