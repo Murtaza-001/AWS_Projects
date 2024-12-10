@@ -19,3 +19,5 @@ In this project, I built a PowerofMath web application using a suite of AWS serv
 - Easy-to-use front-end interface deployed with AWS Amplify, integrating with backend services for a smooth user experience.
 
 This app showcases my ability to design and deploy applications in the cloud, leveraging AWS services to build efficient, scalable, and secure web solutions.
+
+## Architecture Diagram
