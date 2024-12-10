@@ -30,7 +30,7 @@ This app showcases my ability to design and deploy applications in the cloud, le
 - Somewhere to store/return the math results
 - A way to handle permissions
 
-##1. Set up AWS Amplify for Frontend##
+## 1. Set up AWS Amplify for Frontend##
 AWS Amplify will help with the frontend setup, including hosting and authentication (if required).
 
 ## Create an Amplify Project:
@@ -44,7 +44,7 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - click on choose a file an upload the html file from your Local system (provided the code below copy from it)
 - Note that it should be Zip file and Name the file index.html (make sure tha file below i provided make it into zip first) and then upload the file
 
-##2. Set Up the AWS Lambda Function##
+## 2. Set Up the AWS Lambda Function##
 Lambda will handle the logic for adding user data into DynamoDB.
 
 Steps:
@@ -57,10 +57,10 @@ Steps:
 - After that click Deploy to deploy the code
 - After that Click Test and create a new event and name anything you like we use PowerOfmathTest and do private
 - in Json formate change key,value to
-  {
+ ` {
       'base':2,
       'exponent':3
-  }
+  } `
 - After Test the result and look for result it should be 8
 ```
 # import the JSON utility package
@@ -100,7 +100,7 @@ def lambda_handler(event, context):
     }
 ```
 
-##3. Set Up API Gateway to Expose Lambda Function##
+## 3. Set Up API Gateway to Expose Lambda Function##
 API Gateway will allow external HTTP requests to trigger the Lambda function.
 
 - Go to AWS API Gateway -> Create API -> REST API. (click build)
@@ -118,7 +118,7 @@ API Gateway will allow external HTTP requests to trigger the Lambda function.
    }
 - Deploy the API to a new stage, e.g., dev, and get the invoke URL.
 
-##2. Set Up the DynamoDB Table
+## 4. Set Up the DynamoDB Table
 To create database to store our values which gives the result from our function values 
 
 - Go to AWS DynamoDB and create a table called PowerOfMathDatabase.
