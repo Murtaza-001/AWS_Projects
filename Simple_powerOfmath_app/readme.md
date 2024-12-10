@@ -1,6 +1,6 @@
-#Project Title: Cloud-Based Web Application with AWS
+# Project Title: Cloud-Based Web Application with AWS
 
-##Description:
+## Description:
 
 In this project, I built a cloud-based web application using a suite of AWS services to demonstrate scalability, flexibility, and serverless architecture. The application integrates the following AWS services:
 
