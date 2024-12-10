@@ -21,3 +21,4 @@ In this project, I built a PowerofMath web application using a suite of AWS serv
 This app showcases my ability to design and deploy applications in the cloud, leveraging AWS services to build efficient, scalable, and secure web solutions.
 
 ## Architecture Diagram
+![awsSchema1](https://github.com/user-attachments/assets/cbee69d2-53db-4abc-8f81-b59550baa97f)
