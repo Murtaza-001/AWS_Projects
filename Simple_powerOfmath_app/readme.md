@@ -1,4 +1,4 @@
-# Cloud-Based Web Application with AWS
+# PowerofMath Web Application with AWS
 
 ## Description
 
