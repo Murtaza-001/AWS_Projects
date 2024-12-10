@@ -2,7 +2,7 @@
 
 ## Description
 
-In this project, I built a PowerofMath web application using a suite of AWS services to demonstrate scalability, flexibility, and serverless architecture. The application integrates the following AWS services:
+In this project, we will built the PowerofMath web application using a suite of AWS services to demonstrate scalability, flexibility, and serverless architecture. The application integrates the following AWS services:
 
 - **Amazon DynamoDB**: A NoSQL database that serves as the backend data store for the application, providing low-latency data access and automatic scaling.
 - **AWS Lambda**: A serverless compute service that runs backend functions in response to events, allowing for highly scalable and cost-effective application logic without the need for managing servers.
@@ -53,7 +53,15 @@ Steps:
 - Define the function name, e.g., simpleLamdafunc (use whatever you want) we use PowerofMath.
 - Choose a runtime (e.g., Node.js, Python, etc.). For this example, let's we use python (use the latest version).
 - clikc on Create Function
-- copy the code below
+- copy the code below and paste in the lamda function and save it with (ctrl+S)
+- After that click Deploy to deploy the code
+- After that Click Test and create a new event and name anything you like we use PowerOfmathTest and do private
+- in Json formate change key,value to
+  {
+      'base':2,
+      'exponent':3
+  }
+- After Test the result and look for result it should be 8
 ```
 # import the JSON utility package
 import json
@@ -92,5 +100,31 @@ def lambda_handler(event, context):
     }
 ```
 
-- For the role, you can create a new role with basic Lambda permissions, or use an existing role.
-  
+##3. Set Up API Gateway to Expose Lambda Function##
+API Gateway will allow external HTTP requests to trigger the Lambda function.
+
+- Go to AWS API Gateway -> Create API -> REST API. (click build)
+- Create a new API -> API name -> you can give any name, we use PowerOfMathApi.
+- Be sure yout on resources and then click create method
+- After that select method type should be POST
+- Select Lamda fuction and below choose the lamdafunction that we created. (it show as arn: at first followed by your lamdafunc name) be sure the name is correct that you created in lamda
+- In the API dashboard select the Enable CORS -> click on post option -> then click save (it Enable the intraction with different domains like other services)
+- Click on Deploy API -> select new stage -> write a name of stage (any name) we go with dev.
+- copy the Inovke URL -> something like this https://65cm6nx******* paste that url somewhere to retrive it later for the other services
+- After that in in resourse -> click post -> click test, to test the its working in json formate write
+   {
+      'base':2,
+      'exponent':3
+   }
+- Deploy the API to a new stage, e.g., dev, and get the invoke URL.
+
+##2. Set Up the DynamoDB Table
+To create database to store our values which gives the result from our function values 
+
+- Go to AWS DynamoDB and create a table called PowerOfMathDatabase.
+- Set the Partition Key as ID (String).
+- Leave other options as default.
+- click on Create table
+- After that go to dashboard of dynamodb and in the overviwe tab -> under general information -> additional info -> copy the arn:*** to your notepad or somewhere that you can retrive it later.
+
+- Go to Lamdafunction and go to the Configuration tab
