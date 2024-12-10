@@ -45,7 +45,7 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - Note that it should be Zip file (make sure tha file below i provided make it into zip first) and then upload the file
 
 ```<!DOCTYPE html>
-<html>
+<html> # 1
 <head>
     <meta charset="UTF-8">
     <title>To the Power of Math!</title>
