@@ -229,7 +229,10 @@ To create database to store our values which gives the result from our function 
 - Before Uploading the code to amplify make sure to copy your "YOUR API GATEWAY ENDPOIN" that you saved in file or somewhere
 - In the Script tag in code given below -> check for 'fetch()' variable and in that 'your api gateway' paste your apigateway_endpoint
 - After all done go to the amplify domain url and test it out to see the results, in pop-up script in the web page
- 
+  
+- After completing all tasks, be sure to shut down your resources.
+- Shut down All your AWS services which you created it along the project, It will cost you if left open with no use.
+
 ```
 <!DOCTYPE html>
 <html>
@@ -310,8 +313,6 @@ To create database to store our values which gives the result from our function 
 </body>
 </html>
 ```
-- After completing all tasks, be sure to shut down your resources.
-- Shut down All your AWS services which you created it along the project, It will cost you if left open with no use.
 
 # Conclusion
  ## so what we done
