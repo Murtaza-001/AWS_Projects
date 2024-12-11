@@ -225,7 +225,7 @@ To create database to store our values which gives the result from our function 
 - In the amplify console go to app settings -> General settings -> Delete the app
 - Create new app as follow the first steps of the amplify in the above of this doc
 - Make sure to zip your file
-- Copy the udpated code from below and make it into zip file
+- Copy the updated code from below and make it into zip file
 - Before Uploading the code to amplify make sure to copy your "YOUR API GATEWAY ENDPOIN" that you saved in file or somewhere
 - In the Script tag in code given below -> check for 'fetch()' variable and in that 'your api gateway' paste your apigateway_endpoint
 - After all done go to the amplify domain url and test it out to see the results, in pop-up script in the web page
