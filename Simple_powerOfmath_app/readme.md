@@ -44,7 +44,8 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - click on choose a file an upload the html file from your Local system (provided the code below copy from it)
 - Note that it should be Zip file and Name the file index.html (make sure tha file below i provided make it into zip first) and then upload the file
 - After all done check for Domain url in the amplify and click on domain to check the html website that we uploaded.
-  
+- We will update the code later in the following steps to fully leverage the power of all the services used in this project..
+
   ```
   <!DOCTYPE html>
   <html>
