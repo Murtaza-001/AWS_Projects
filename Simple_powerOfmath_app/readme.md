@@ -127,4 +127,29 @@ To create database to store our values which gives the result from our function 
 - click on Create table
 - After that go to dashboard of dynamodb and in the overviwe tab -> under general information -> additional info -> copy the arn:*** to your notepad or somewhere that you can retrive it later.
 
+## 5. Set up IAM Roles
+
 - Go to Lamdafunction and go to the Configuration tab
+- go to Permissions -> go to execution role -> click the powerofmathfunc role
+-  it will take to Iam console.
+-  click add permission -> click the inline policy -> click on json and paste the code given below
+   ```
+   {
+"Version": "2012-10-17",
+"Statement": [
+    {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:PutItem",
+            "dynamodb:DeleteItem",
+            "dynamodb:GetItem",
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:UpdateItem"
+        ],
+        "Resource": "YOUR-TABLE-ARN"
+    }
+    ]
+}
+   ```
