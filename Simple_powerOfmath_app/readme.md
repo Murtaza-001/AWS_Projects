@@ -73,10 +73,11 @@ Steps:
 - After that click Deploy to deploy the code
 - After that Click Test and create a new event and name anything you like we use PowerOfmathTest and do private
 - in Json formate change key,value to
- ` {
-      'base':2,
-      'exponent':3
-  } `
+ `` {
+      "base":2,
+      "exponent":3
+    }
+  ``
 - After Test the result and look for result it should be 8
 ```
 # import the JSON utility package
