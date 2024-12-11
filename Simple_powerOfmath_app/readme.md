@@ -220,6 +220,90 @@ To create database to store our values which gives the result from our function 
   ```
 
 ## 6. update the Amplyfy
-- Follow the 1. step like i mentioned in the beging of the document to create amplyfy project
-- In the
-- Make sure to zip your file 
+- We have to update the code as we mention in the first step.
+- To update we have to delete the existing app
+- In the amplify console go to app settings -> General settings -> Delete the app
+- Create new app as follow the first steps of the amplify in the above of this doc
+- Make sure to zip your file
+- Copy the udpated code from below and make it into zip file
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To the Power of Math!</title>
+    <!-- Styling for the client UI -->
+    <style>
+    h1 {
+        color: #FFFFFF;
+        font-family: system-ui;
+		margin-left: 20px;
+        }
+	body {
+        background-color: #222629;
+        }
+    label {
+        color: #86C232;
+        font-family: system-ui;
+        font-size: 20px;
+        margin-left: 20px;
+		margin-top: 20px;
+        }
+     button {
+        background-color: #86C232;
+		border-color: #86C232;
+		color: #FFFFFF;
+        font-family: system-ui;
+        font-size: 20px;
+		font-weight: bold;
+        margin-left: 30px;
+		margin-top: 20px;
+		width: 140px;
+        }
+	 input {
+        color: #222629;
+        font-family: system-ui;
+        font-size: 20px;
+        margin-left: 10px;
+		margin-top: 20px;
+		width: 100px;
+        }
+    </style>
+    <script>
+        // callAPI function that takes the base and exponent numbers as parameters
+        var callAPI = (base,exponent)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("Content-Type", "application/json");
+            // using built in JSON utility package turn object to string and store in a variable
+            var raw = JSON.stringify({"base":base,"exponent":exponent});
+            // create a JSON object with parameters for API call and store in a variable
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            fetch("YOUR API GATEWAY ENDPOINT", requestOptions)
+            .then(response => response.text())
+            .then(result => alert(JSON.parse(result).body))
+            .catch(error => console.log('error', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>TO THE POWER OF MATH!</h1>
+	<form>
+        <label>Base number:</label>
+        <input type="text" id="base">
+        <label>...to the power of:</label>
+        <input type="text" id="exponent">
+        <!-- set button onClick method to call function we defined passing input values as parameters -->
+        <button type="button" onclick="callAPI(document.getElementById('base').value,document.getElementById('exponent').value)">CALCULATE</button>
+    </form>
+</body>
+</html>
+```
