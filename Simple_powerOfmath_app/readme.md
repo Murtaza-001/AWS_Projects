@@ -78,7 +78,7 @@ Steps:
       "exponent":3
     }
   ``
-- After Test the result and look for result it should be 8
+- After Test the result and look for result it should be "8" you play with different values for result.
 ```
 # import the JSON utility package
 import json
