@@ -18,7 +18,7 @@ In this project, we will built a simple PowerofMath web application using a suit
 - Secure API access with robust IAM roles and policies.
 - Easy-to-use front-end interface deployed with AWS Amplify, integrating with backend services for a smooth user experience.
 
-This app showcases my ability to design and deploy applications in the cloud, leveraging AWS services to build efficient, scalable, and secure web solutions.
+This app showcases the ability to design and deploy applications in the cloud, leveraging AWS services to build efficient, scalable, and secure web solutions.
 
 ## Architecture Diagram
 ![awsSchema1](https://github.com/user-attachments/assets/cbee69d2-53db-4abc-8f81-b59550baa97f)
