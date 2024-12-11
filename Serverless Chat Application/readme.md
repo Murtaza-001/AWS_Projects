@@ -9,3 +9,10 @@
 - **Authentication**: AWS Cognito for user authentication.
 - **Real-time Communication**: AWS API Gateway and WebSocket for real-time messaging.
 - **Hosting**: AWS S3 to host the static frontend.
+
+## 2. Frontend (Web Interface)
+   For the frontend, you can use React.js for building the user interface, and AWS S3 to serve the static files.
+
+## Steps:
+  **1. Create a React Application:**
+   Use Create React App
