@@ -160,6 +160,11 @@ To create database to store our values which gives the result from our function 
 ## 5. update the Lamda funcion
 
 - Go to lamda function and update the code with the new one which is given below copy and paste in the function
+- After that click on deploy for deployment of code
+- Then test it.
+- Then check the Dynamodb table in Dynamodb service go to console of it and look out for tables and click and you see there a table is created.
+- All set for dynamodb
+
   ```
   # import the JSON utility package
   import json
