@@ -33,7 +33,7 @@ This app showcases my ability to design and deploy applications in the cloud, le
 ## 1. Set up AWS Amplify for Frontend##
 AWS Amplify will help with the frontend setup, including hosting and authentication (if required).
 
-## Create an Amplify Project:
+## Create an Amplify Project: (better to do this step at the Last)
 
 - Open the AWS Amplify Console and click "Create App".
 - Choose "Host Web" as the platform.
@@ -43,6 +43,20 @@ AWS Amplify will help with the frontend setup, including hosting and authenticat
 - Name the app
 - click on choose a file an upload the html file from your Local system (provided the code below copy from it)
 - Note that it should be Zip file and Name the file index.html (make sure tha file below i provided make it into zip first) and then upload the file
+
+  ```
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="UTF-8">
+      <title>To the Power of Math!</title>
+  </head>
+  
+  <body>
+      To the Power of Math!
+  </body>
+  </html>
+  ```
 
 ## 2. Set Up the AWS Lambda Function##
 Lambda will handle the logic for adding user data into DynamoDB.
@@ -157,12 +171,12 @@ To create database to store our values which gives the result from our function 
 - It will give the specific permission of dynamodb to the lamda funcion to performe the given actions
 - After that click reviwe policy -> name the policy we name it PowerofMathpolicy -> click create policy
 
-## 5. update the Lamda funcion
+## 6. update the Lamda funcion
 
 - Go to lamda function and update the code with the new one which is given below, copy and paste it into your function
 - After that click on deploy for deployment of code
 - Then test it.
-- Then check the Dynamodb table in Dynamodb service go to console of it and look out for tables and click and you see there a table is created.
+- Then check the Dynamodb table -> go to console of dynamodb -> click on Explore table items -> then you see a table created with result.
 - All set for dynamodb
 
   ```
@@ -202,3 +216,8 @@ To create database to store our values which gives the result from our function 
       'body': json.dumps('Your result is ' + str(mathResult))
       }
   ```
+
+## 6. update the Amplyfy
+- Follow the 1. step like i mentioned in the beging of the document to create amplyfy project
+- In the
+- Make sure to zip your file 
