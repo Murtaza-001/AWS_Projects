@@ -133,7 +133,7 @@ To create database to store our values which gives the result from our function 
 - go to Permissions -> go to execution role -> click the powerofmathfunc role
 -  it will take to Iam console.
 -  click add permission -> click the inline policy -> click on json and paste the code given below
-   ```
+  ```
    {
 "Version": "2012-10-17",
 "Statement": [
@@ -152,4 +152,4 @@ To create database to store our values which gives the result from our function 
     }
     ]
 }
-   ```
+```
