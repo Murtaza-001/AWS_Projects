@@ -294,7 +294,7 @@ To create database to store our values which gives the result from our function 
 ```
 
 ### After completing all tasks, be sure to shut down your resources.
-### Shut down All your AWS services which you created it along this project, It will cost you if left open with no use.
+### Shut down All your AWS services which you created it along this project, It will cost you if left open even if you not use.
 
 
 # Conclusion
