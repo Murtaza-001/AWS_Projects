@@ -9,6 +9,4 @@ In this Project you will use AWS Amplify to build a serverless web application p
 - Connect the app to the backend
 
   ## Application Architecture
-  ![Uploading serveless_ai_app-removebg-preview.png…]()
-  
-  <img width="422" alt="serveless_ai_app" src="https://github.com/user-attachments/assets/04df88d3-7b88-4a91-ade0-478f554e2939" />
+  ![serveless_ai_app-removebg-preview](https://github.com/user-attachments/assets/da4cdc2c-81fd-4519-b286-db547ad59f14)
