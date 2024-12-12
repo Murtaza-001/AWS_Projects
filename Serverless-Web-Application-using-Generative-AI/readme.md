@@ -545,5 +545,12 @@ In this task, you will update the website you created in module one to use the A
 - Sign in to the AWS Management console in a new browser window, and open the AWS Amplify console at https://console.aws.amazon.com/amplify/apps.
 - AWS Amplify automatically builds your source code and deployed your app at https://...amplifyapp.com, and on every git push your deployment instance will 
   update. Select the Visit deployed URL button to see your web app up and running live.
+  
 
 - You have now connected your app to the Amplify backend and built a frontend to generate a recipe based on a list of ingredients submitted by the user.
+
+
+## Task 6: Clean up Resources
+  - delete all the resources that you created after testing your web app
+  - In the Amplify console, in the left-hand navigation for the ai-recipe-generator app, choose App settings, and select General settings.
+  - In the General settings section, choose Delete app.
