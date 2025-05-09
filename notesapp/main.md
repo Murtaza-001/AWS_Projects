@@ -12,3 +12,7 @@ In this tutorial, you will:
 - Use Amplify to add authentication, data & storage solutions to the app
 - Start a cloud sandbox environment that provides an isolated development space to rapidly build, test, and iterate on a fullstack app
 - Implement the frontend code to enable users to create, update, and delete notes
+
+## Architecture Diagram
+![Screenshot (16)](https://github.com/user-attachments/assets/7c6e0bea-2888-414b-8ef9-108ff83659d2)
+
