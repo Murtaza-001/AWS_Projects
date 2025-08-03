@@ -142,23 +142,41 @@ def lambda_handler(event, context):
     }
 ```
 
-## 3. Set Up API Gateway to Expose Lambda Function##
+## 🌐 Step 3: Set Up API Gateway to Expose Lambda Function
+
 API Gateway will allow external HTTP requests to trigger the Lambda function.
 
-- Go to AWS API Gateway -> Create API -> REST API. (click build)
-- Create a new API -> API name -> you can give any name, we use PowerOfMathApi.
-- Be sure yout on resources and then click create method
-- After that select method type should be POST
-- Select Lamda fuction and below choose the lamdafunction that we created. (it show as arn: at first followed by your lamdafunc name) be sure the name is correct that you created in lamda
-- In the API dashboard select the Enable CORS -> click on post option -> then click save (it Enable the intraction with different domains like other services)
-- Click on Deploy API -> select new stage -> write a name of stage (any name) we go with dev.
-- copy the Inovke URL -> something like this -https://65cm6nx******* paste that url somewhere to retrive it later for the other services
-- After that in in resourse -> click post -> click test, to test the its working in json formate write
-   {
-      'base':2,
-      'exponent':3
-   }
-- Deploy the API to a new stage, e.g., dev, and get the invoke URL.
+---
+
+### 🛠️ Steps:
+
+1. Go to **AWS API Gateway → Create API → REST API** (click **Build**).
+2. Create a new API and give it a name — you can choose any name. In our case, we use **PowerOfMathApi**.
+3. In the **Resources** section, click **Create Method**.
+4. Choose the method type as **POST**.
+5. Select **Lambda Function**, and from the dropdown, choose the Lambda function you created earlier.  
+   (It will show as an ARN followed by your Lambda function name — make sure it’s correct.)
+6. In the API dashboard, select **Enable CORS**:
+   - Click on the **POST** option.
+   - Then click **Save**.  
+   (This enables interaction with different domains or services.)
+7. Click **Deploy API**:
+   - Select **"New Stage"**
+   - Enter a stage name (any name works; we use **dev**).
+8. Copy the **Invoke URL** — it should look something like:  
+   `https://65cm6nx*******`  
+   Save this URL somewhere for use in other services.
+9. Go to the **Resources** tab:
+   - Click **POST**
+   - Click **Test**, and in the JSON input field, enter:  
+     `{ 'base': 2, 'exponent': 3 }`
+
+10. Deploy the API to a stage (e.g., `dev`) and keep the **Invoke URL** handy for the next steps.
+
+---
+
+> 📌 This completes your API setup, allowing your Lambda function to be triggered via HTTP POST requests.
+
 
 ## 4. Set Up the DynamoDB Table
 To create database to store our values which gives the result from our function values 
