@@ -53,28 +53,33 @@ This project showcases the implementation of a simple web application that calcu
 ## Architecture Diagram
 ![awsSchema1](https://github.com/user-attachments/assets/cbee69d2-53db-4abc-8f81-b59550baa97f)
 
-## What do we need?
-- A way to create/ host a webpage
-- A way to invoke math functionality
-- A way to do math
-- Somewhere to store/return the math results
-- A way to handle permissions
+## ⚙️ What Do We Need?
 
-## 1. Set up AWS Amplify for Frontend##
-AWS Amplify will help with the frontend setup, including hosting and authentication (if required).
+To build and deploy our **PowerofMath** serverless application, we'll need:
 
-## Create an Amplify Project: (better to do this step at the Last)
+1. ✅ A way to **create/host a webpage**.
+2. ✅ A method to **invoke backend math functionality**.
+3. ✅ Logic to **perform the math operations**.
+4. ✅ A **data store** to save and retrieve math results.
+5. ✅ A secure way to **handle permissions and access control**.
 
-- Open the AWS Amplify Console and click "Create App".
-- Choose "Host Web" as the platform.
-- Connect your repository (GitHub, GitLab, Bitbucket, or manually).
-- so we are going with manually
-- so choose without git provider.
-- Name the app
-- click on choose a file an upload the html file from your Local system (provided the code below copy from it)
-- Note that it should be Zip file and Name the file index.html (make sure tha file below i provided make it into zip first) and then upload the file
-- After all done check for Domain url in the amplify and click on domain to check the html website that we uploaded.
-- We will update the code later in the following steps to fully laverage the power of all the services used in this project..
+---
+
+## 🚀 Step 1: Set Up AWS Amplify for Frontend Hosting
+
+AWS Amplify simplifies static web hosting, integrates with backend services, and offers fast global deployment.
+
+### 🛠️ Instructions
+
+1. **Go to** the [AWS Amplify Console](https://console.aws.amazon.com/amplify/home).
+2. Click **"Create App"** and choose **"Host Web App"**.
+3. Choose **"Manual deployment"** since we're not using a Git provider (e.g., GitHub).
+4. **Name your app** (e.g., `PowerofMathFrontend`).
+5. Click **"Choose a file"**, then upload your local HTML code **as a ZIP file**.
+
+> 📦 Make sure the ZIP file contains your `index.html` file at the root level.
+
+### 📂 Example HTML File (`index.html`)
 
   ```
   <!DOCTYPE html>
