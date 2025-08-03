@@ -50,9 +50,6 @@ This project showcases the implementation of a simple web application that calcu
 
 ---
 
-## 📂 Folder Structure
-
-
 ## Architecture Diagram
 ![awsSchema1](https://github.com/user-attachments/assets/cbee69d2-53db-4abc-8f81-b59550baa97f)
 
