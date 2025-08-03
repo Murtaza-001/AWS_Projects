@@ -249,50 +249,65 @@ We'll configure IAM permissions so that the Lambda function can interact securel
    }
  
 
-## 6. update the Lamda funcion
+## 🔄 Step 6: Update the Lambda Function
 
-- Go to lamda function and update the code with the new one which is given below, copy and paste it into your function
-- After that click on deploy for deployment of code
-- Then test it.
-- Then check the Dynamodb table -> go to console of dynamodb -> click on Explore table items -> then you see a table created with result.
-- All set for dynamodb
+Now that everything is connected, we’ll update the Lambda function to store the results in DynamoDB.
 
-  ```
-  # import the JSON utility package
-  import json
-  # import the Python math library
-  import math
-  
-  # import the AWS SDK (for Python the package name is boto3)
-  import boto3
-  # import two packages to help us with dates and date formatting
-  from time import gmtime, strftime
-  
-  # create a DynamoDB object using the AWS SDK
-  dynamodb = boto3.resource('dynamodb')
-  # use the DynamoDB object to select our table
-  table = dynamodb.Table('PowerOfMathDatabase')
-  # store the current time in a human readable format in a variable
-  now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
-  
-  # define the handler function that the Lambda service will use an entry point
-  def lambda_handler(event, context):
-  
-  # extract the two numbers from the Lambda service's event object
-      mathResult = math.pow(int(event['base']), int(event['exponent']))
-  
-  # write result and time to the DynamoDB table using the object we instantiated and save response in a variable
-      response = table.put_item(
-          Item={
-              'ID': str(mathResult),
-              'LatestGreetingTime':now
-              })
-  
-  # return a properly formatted JSON object
-      return {
-      'statusCode': 200,
-      'body': json.dumps('Your result is ' + str(mathResult))
-      }
+---
+
+### 🛠️ Steps:
+
+1. Go to your **Lambda function** in the AWS Console.
+2. **Replace the existing code** with the new version provided below.
+3. Click **Deploy** to apply the new code changes.
+4. After deployment, click **Test**.
+5. Once tested:
+   - Go to **AWS DynamoDB**
+   - Click on **Explore Table Items**
+   - You should see a new item in the `PowerOfMathDatabase` table containing the result and timestamp.
+
+✅ At this point, DynamoDB is successfully integrated and capturing the results from your Lambda function.
+
+---
+
+### 🧠 Lambda Function Code (Updated)
+
+```python
+# import the JSON utility package
+import json
+# import the Python math library
+import math
+
+# import the AWS SDK (for Python the package name is boto3)
+import boto3
+# import two packages to help us with dates and date formatting
+from time import gmtime, strftime
+
+# create a DynamoDB object using the AWS SDK
+dynamodb = boto3.resource('dynamodb')
+# use the DynamoDB object to select our table
+table = dynamodb.Table('PowerOfMathDatabase')
+# store the current time in a human readable format in a variable
+now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+
+# define the handler function that the Lambda service will use as an entry point
+def lambda_handler(event, context):
+    # extract the two numbers from the Lambda service's event object
+    mathResult = math.pow(int(event['base']), int(event['exponent']))
+
+    # write result and time to the DynamoDB table using the object we instantiated
+    response = table.put_item(
+        Item={
+            'ID': str(mathResult),
+            'LatestGreetingTime': now
+        })
+
+    # return a properly formatted JSON object
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Your result is ' + str(mathResult))
+    }
+
   ```
 
 ## 6. update the Amplyfy
