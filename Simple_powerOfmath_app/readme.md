@@ -310,18 +310,41 @@ def lambda_handler(event, context):
 
   ```
 
-## 6. update the Amplyfy
-- We have to update the code as we mention in the first step.
-- To update we have to delete the existing app
-- In the amplify console go to app settings -> General settings -> Delete the app
-- Create new app as follow the first steps of the amplify in the above of this doc
-- Make sure to zip your file
-- Copy the updated code from below and make it into zip file
-- Before Uploading the code to amplify make sure to copy your "YOUR API GATEWAY ENDPOIN" that you saved in file or somewhere
-- In the Script tag in code given below -> check for 'fetch()' variable and in that 'your api gateway' paste your apigateway_endpoint
-- After all done go to the amplify domain url and test it out to see the results, in pop-up script in the web page
-  
-```
+## 🌐 Step 7: Update the Amplify Frontend
+
+Now that our backend services are ready, we’ll update the frontend hosted on AWS Amplify to interact with the new API Gateway endpoint.
+
+---
+
+### 🛠️ Steps:
+
+1. **Delete the Existing App:**
+   - Go to the **Amplify Console**
+   - Navigate to **App Settings → General Settings**
+   - Click **Delete App**
+
+2. **Recreate the App (Follow the Amplify Setup in Step 1):**
+   - Choose **"Host Web App"**
+   - Select **Manual Deployment**
+   - Name your app
+   - Upload a new ZIP file (see below)
+
+3. **Update and Prepare the HTML:**
+   - Copy the **updated code** (provided below)
+   - Replace `"YOUR API GATEWAY ENDPOINT"` in the JavaScript `fetch()` function with your saved API Gateway invoke URL
+   - Save the file as `index.html`
+   - Zip the file before uploading to Amplify
+
+4. **Upload the ZIP File to Amplify:**
+   - Use the file upload dialog in Amplify setup
+   - After deployment, open your **Amplify domain URL**
+   - Test the app to ensure functionality — results should appear via a popup on the web page
+
+---
+
+### 🧾 HTML Code (Updated UI with API Integration)
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -332,74 +355,72 @@ def lambda_handler(event, context):
     h1 {
         color: #FFFFFF;
         font-family: system-ui;
-		margin-left: 20px;
-        }
-	body {
+        margin-left: 20px;
+    }
+    body {
         background-color: #222629;
-        }
+    }
     label {
         color: #86C232;
         font-family: system-ui;
         font-size: 20px;
         margin-left: 20px;
-		margin-top: 20px;
-        }
-     button {
+        margin-top: 20px;
+    }
+    button {
         background-color: #86C232;
-		border-color: #86C232;
-		color: #FFFFFF;
+        border-color: #86C232;
+        color: #FFFFFF;
         font-family: system-ui;
         font-size: 20px;
-		font-weight: bold;
+        font-weight: bold;
         margin-left: 30px;
-		margin-top: 20px;
-		width: 140px;
-        }
-	 input {
+        margin-top: 20px;
+        width: 140px;
+    }
+    input {
         color: #222629;
         font-family: system-ui;
         font-size: 20px;
         margin-left: 10px;
-		margin-top: 20px;
-		width: 100px;
-        }
+        margin-top: 20px;
+        width: 100px;
+    }
     </style>
     <script>
         // callAPI function that takes the base and exponent numbers as parameters
-        var callAPI = (base,exponent)=>{
-            // instantiate a headers object
+        var callAPI = (base, exponent) => {
             var myHeaders = new Headers();
-            // add content type header to object
             myHeaders.append("Content-Type", "application/json");
-            // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"base":base,"exponent":exponent});
-            // create a JSON object with parameters for API call and store in a variable
+
+            var raw = JSON.stringify({ "base": base, "exponent": exponent });
+
             var requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
                 body: raw,
                 redirect: 'follow'
             };
-            // make API call with parameters and use promises to get response
+
             fetch("YOUR API GATEWAY ENDPOINT", requestOptions)
-            .then(response => response.text())
-            .then(result => alert(JSON.parse(result).body))
-            .catch(error => console.log('error', error));
+                .then(response => response.text())
+                .then(result => alert(JSON.parse(result).body))
+                .catch(error => console.log('error', error));
         }
     </script>
 </head>
 <body>
     <h1>TO THE POWER OF MATH!</h1>
-	<form>
+    <form>
         <label>Base number:</label>
         <input type="text" id="base">
         <label>...to the power of:</label>
         <input type="text" id="exponent">
-        <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <button type="button" onclick="callAPI(document.getElementById('base').value,document.getElementById('exponent').value)">CALCULATE</button>
+        <button type="button" onclick="callAPI(document.getElementById('base').value, document.getElementById('exponent').value)">CALCULATE</button>
     </form>
 </body>
 </html>
+
 ```
 
 ### After completing all tasks, be sure to shut down your resources.
