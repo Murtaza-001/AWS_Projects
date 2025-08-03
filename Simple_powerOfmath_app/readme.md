@@ -95,19 +95,28 @@ AWS Amplify simplifies static web hosting, integrates with backend services, and
   </html>
   ```
 
-## 2. Set Up the AWS Lambda Function##
-Lambda will handle the logic for adding user data into DynamoDB.
+## ⚙️ Step 2: Set Up the AWS Lambda Function
 
-Steps:
-- Create a new Lambda function in the AWS console.
-- Go to AWS Lambda -> Create Function -> Author from Scratch.
-- Define the function name, e.g., simpleLamdafunc (use whatever you want) we use PowerofMath.
-- Choose a runtime (e.g., Node.js, Python, etc.). For this example, let's we use python (use the latest version).
-- clikc on Create Function
-- copy the code below and paste in the lamda function and save it with (ctrl+S)
-- After that click Deploy to deploy the code
-- After that Click Test and create a new event and name anything you like we use PowerOfmathTest and do private
-- in Json formate change key,value to
+AWS Lambda will handle the **backend logic** for computing the power of numbers and storing results in DynamoDB.
+
+---
+
+### 🛠️ Steps to Create the Lambda Function
+
+1. **Navigate to the AWS Lambda Console**  
+   Go to **AWS Console → Lambda → Create Function**.
+
+2. **Create the function from scratch:**
+   - Select **"Author from scratch"**
+   - Set your function name (e.g., `PowerofMath`)
+   - Choose a **runtime**:  
+     > For this project, we use **Python** (choose the latest available version)
+
+3. **Click "Create Function"**
+
+4. After creation:
+   - Scroll to the **Function code** section
+   - **Replace the default code** with the following:
  `` {
       "base":2,
       "exponent":3
