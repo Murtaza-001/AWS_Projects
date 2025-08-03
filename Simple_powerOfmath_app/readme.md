@@ -178,44 +178,76 @@ API Gateway will allow external HTTP requests to trigger the Lambda function.
 > 📌 This completes your API setup, allowing your Lambda function to be triggered via HTTP POST requests.
 
 
-## 4. Set Up the DynamoDB Table
-To create database to store our values which gives the result from our function values 
+## 🗄️ Step 4: Set Up the DynamoDB Table
 
-- Go to AWS DynamoDB and create a table called PowerOfMathDatabase.
-- Set the Partition Key as ID (String).
-- Leave other options as default.
-- click on Create table
-- After that go to dashboard of dynamodb and in the overviwe tab -> under general information -> additional info -> copy the arn:*** to your notepad or somewhere that you can retrive it later.
+We'll create a DynamoDB table to store the results returned from our Lambda function.
 
-## 5. Set up IAM Roles
+---
 
-- Go to Lamdafunction and go to the Configuration tab
-- go to Permissions -> go to execution role -> click the powerofmathfunc role
--  it will take to Iam console.
--  click add permission -> click the inline policy -> click on json and paste the code given below
-  ```
+### 🛠️ Steps:
+
+1. Go to **AWS DynamoDB** and click **Create Table**.
+2. Name the table **PowerOfMathDatabase**.
+3. Set the **Partition Key** as `ID` (Type: `String`).
+4. Leave all other options as default.
+5. Click **Create Table**.
+
+---
+
+### 📋 After Creation:
+
+1. Go to the **DynamoDB dashboard**.
+2. Under the **Overview** tab, scroll to **General Information** → **Additional Info**.
+3. Copy the **ARN** (starts with `arn:aws:dynamodb:...`) and save it in your notepad or somewhere safe.  
+   You’ll need this ARN in later steps to configure permissions or link services.
+
+---
+
+> 📌 Your DynamoDB table is now ready to store computation results!
+
+## 🔐 Step 5: Set Up IAM Roles
+
+We'll configure IAM permissions so that the Lambda function can interact securely with the DynamoDB table.
+
+---
+
+### 🛠️ Steps:
+
+1. Go to your **Lambda function** in the AWS Console.
+2. Navigate to the **Configuration** tab.
+3. Click on **Permissions** → under **Execution Role**, click the attached role name  
+   (e.g., `powerofmathfunc-role`).  
+   This will open the IAM console.
+
+4. In the IAM role page:
+   - Click **Add permissions**
+   - Select **Create inline policy**
+   - Choose the **JSON** tab
+
+5. Paste the following policy into the JSON editor:
+
+   > ⚠️ Replace `"YOUR-TABLE-ARN"` with the actual ARN of your DynamoDB table you copied earlier.
+
+   ```json
    {
-"Version": "2012-10-17",
-"Statement": [
-    {
-        "Sid": "VisualEditor0",
-        "Effect": "Allow",
-        "Action": [
-            "dynamodb:PutItem",
-            "dynamodb:DeleteItem",
-            "dynamodb:GetItem",
-            "dynamodb:Scan",
-            "dynamodb:Query",
-            "dynamodb:UpdateItem"
-        ],
-        "Resource": "YOUR-TABLE-ARN"
-    }
-    ]
-}
-```
-- Copy your arn name in "Resource:" of your Dynamodb table in console you find or where you saved at as we saved earlier.
-- It will give the specific permission of dynamodb to the lamda funcion to performe the given actions
-- After that click reviwe policy -> name the policy we name it PowerofMathpolicy -> click create policy
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Sid": "VisualEditor0",
+         "Effect": "Allow",
+         "Action": [
+           "dynamodb:PutItem",
+           "dynamodb:DeleteItem",
+           "dynamodb:GetItem",
+           "dynamodb:Scan",
+           "dynamodb:Query",
+           "dynamodb:UpdateItem"
+         ],
+         "Resource": "YOUR-TABLE-ARN"
+       }
+     ]
+   }
+ 
 
 ## 6. update the Lamda funcion
 
