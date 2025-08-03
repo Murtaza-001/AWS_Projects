@@ -423,15 +423,36 @@ Now that our backend services are ready, we’ll update the frontend hosted on A
 
 ```
 
-### After completing all tasks, be sure to shut down your resources.
-### Shut down All your AWS services which you created it along this project, It will cost you if left open even if you not use.
+## 🛑 Final Step: Shut Down AWS Resources
 
+Once you've finished testing and demonstrating the application, **make sure to shut down all the AWS resources** you created during this project.
 
-# Conclusion
- ## so what we done
-- A way to create/ host a webpage ( with amplify)
-- A way to invoke math functionality (with API_GATEWAY)
-- A way to do math ( with Lamda function )
-- Somewhere to store/return the math results ( with DynamoDB )
-- A way to handle permissions ( With IAM User )
+> ⚠️ **Reminder:** AWS services can incur charges even when idle.  
+If you leave them running, you may be billed unexpectedly.
+
+---
+
+### ✅ Services to Shut Down:
+
+- Delete the **Amplify app**
+- Remove the **API Gateway**
+- Delete the **Lambda function**
+- Delete the **DynamoDB table**
+- Remove or detach the **IAM roles/policies**
+
+---
+
+## ✅ Conclusion
+
+Here’s what we accomplished in this project:
+
+- ✅ **A way to create/host a webpage** → using **AWS Amplify**
+- ✅ **A way to invoke math functionality** → using **API Gateway**
+- ✅ **A way to perform math operations** → using **AWS Lambda**
+- ✅ **A way to store and retrieve results** → using **DynamoDB**
+- ✅ **A way to manage secure permissions** → using **IAM roles and policies**
+
+---
+
+> 🎉 You’ve successfully built and deployed a fully serverless, scalable, and interactive web application using AWS!
 
