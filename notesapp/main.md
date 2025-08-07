@@ -53,13 +53,6 @@ By the end of this tutorial, you will:
 
 ## 📸 UI Preview
 
-> _You can add screenshots or a link to a live demo here._
-
----
-
-## 📁 Folder Structure
-
-
 
 ## Architecture Diagram
 ![Screenshot (16)](https://github.com/user-attachments/assets/7c6e0bea-2888-414b-8ef9-108ff83659d2)
