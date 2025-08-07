@@ -1,12 +1,54 @@
-# Serverless Web Application using Generative AI
-In this Project you will use AWS Amplify to build a serverless web application powered by Generative AI using Amazon Bedrock and the Claude 3 Sonnet foundation model. Users can enter a list of ingredients, and the application will generate delicious recipes based on the input ingredients. The application includes an HTML-based user interface for ingredient submission and a backend web app to request AI-generated recipes.
+# 🍳 Serverless Web Application using Generative AI
 
-## What you will accomplish
-- Configure AWS Amplify to host your frontend application with continuous deployment built in
-- Configure Amplify Auth and enable Amazon Bedrock foundation model Access
-- Build an app backend for handling requests for your web application
-- Use Amplify Data to call the serverless backend
-- Connect the app to the backend
+Build a fully serverless web application using **AWS Amplify**, powered by **Amazon Bedrock** and the **Claude 3 Sonnet** foundation model. Users input a list of ingredients, and the AI will generate delicious, creative recipes based on that input — no backend servers required!
+
+---
+
+## 🧠 Project Overview
+
+This project leverages modern serverless architecture to connect a simple frontend with a powerful backend powered by Generative AI. You’ll deploy an HTML-based interface for ingredient input, and use a secure backend API to request AI-generated recipe content using **Claude 3 Sonnet** via **Amazon Bedrock**.
+
+---
+
+## ✅ What You Will Accomplish
+
+By completing this project, you will:
+
+- ✅ **Configure AWS Amplify** to host your frontend with built-in CI/CD
+- ✅ **Enable Amplify Auth** for secure access to your application
+- ✅ **Use Amazon Bedrock** to access Claude 3 Sonnet for generating recipes
+- ✅ **Build a serverless backend** to handle recipe requests
+- ✅ **Connect your frontend to the backend** using Amplify Data
+- ✅ Deploy a fully functional **Generative AI application**, end-to-end
+
+---
+
+## 🧰 Tools & Services Used
+
+| Tool / Service         | Purpose                                         |
+|------------------------|--------------------------------------------------|
+| **AWS Amplify**        | Hosting, backend services, Auth, CI/CD           |
+| **Amazon Bedrock**     | Access Claude 3 Sonnet foundation model          |
+| **Claude 3 Sonnet**    | Generate creative, high-quality recipes          |
+| **Amplify Auth (Cognito)** | Authenticate users securely                     |
+| **Amplify Functions**  | Run backend logic in a serverless environment    |
+| **HTML/CSS/JavaScript**| Build a clean and simple user interface          |
+
+---
+
+## 🧑‍🍳 How It Works
+
+1. **User Input**: Users type a list of ingredients into a form on the web UI
+2. **Auth (optional)**: Access is secured with Amplify Auth
+3. **API Request**: The frontend calls a Lambda function via Amplify
+4. **AI Generation**: Lambda uses Amazon Bedrock to query Claude 3 Sonnet
+5. **Response**: A recipe is generated and returned to the UI
+
+---
+
+## 🗂️ Project Structure
+
+
 
   ## Application Architecture
   ![ai_aws_app](https://github.com/user-attachments/assets/2c629fb6-b958-4223-8d8a-947b64772238)
